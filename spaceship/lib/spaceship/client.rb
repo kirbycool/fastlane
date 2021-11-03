@@ -509,6 +509,7 @@ module Spaceship
         raise InvalidUserCredentialsError.new, "Invalid username and password combination. Used '#{user}' as the username."
       when 200
         fetch_olympus_session
+        store_cookie
         return response
       when 409
         # 2 step/factor is enabled for this account, first handle that
